@@ -1,0 +1,38 @@
+.card{
+    text-align: center;
+}
+
+td{
+    height: 100px;
+  }
+
+ h2{
+   text-align: center;
+   color:gray;
+ }
+
+ .precio{
+   display:block;
+   font-size:20px;
+ }
+
+ #carrito{
+    width: 30%; 
+    background-color: black; 
+    height: 100vh;
+ }
+  
+#listaProductos{
+
+  width: 70%;
+}
+
+#contenedorPadre{
+
+  display:flex;
+}
+
+.bi-cart-fill{
+  font-size:40px;
+  padding-left:40px;
+}
