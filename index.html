@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <title>Pre-Entrega 3</title>
 </head>
 
@@ -15,94 +16,12 @@
 
     <div id="contenedorPadre">
         <div class="container" id="listaProductos">
+
             <h2>Productos</h2>
-            <div class="row">
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/microwave.jpg" class="card-img-top" alt="..." height="150" width="150">
-                        <div class="card-body">
-                            <h5 class="card-title">Microondas</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                                <span class="precio">2000$</span>  
-                            <a href="#" class="btn btn-primary botonCarrito">Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/oven.jpg" class="card-img-top" alt="..." height="150" width="150">
-                        <div class="card-body">
-                            <h5 class="card-title">Horno</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                                <span class="precio">3600$</span>  
-                            <a href="#" class="btn btn-primary botonCarrito">Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/sofa.jpg" class="card-img-top" alt="..." height="150" width="150">
-                        <div class="card-body">
-                            <h5 class="card-title">Sofa</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                                <span class="precio">1000$</span>  
-                            <a href="#" class="btn btn-primary botonCarrito">Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/table.jpg" class="card-img-top" alt="..." height="150" width="150">
-                        <div class="card-body">
-                            <h5 class="card-title">Mesa</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                                <span class="precio">1800$</span>  
-                            <a href="#" class="btn btn-primary botonCarrito">Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/toaster.jpg" class="card-img-top" alt="..." height="150" width="150">
-                        <div class="card-body">
-                            <h5 class="card-title">Tostadora</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                                <span class="precio">1200$</span>  
-                            <a href="#" class="btn btn-primary botonCarrito">Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/pot.jpg" class="card-img-top" alt="..." height="150" width="150">
-                        <div class="card-body">
-                            <h5 class="card-title">Cacerola</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                                <span class="precio">800$</span>  
-                            <a href="#" class="btn btn-primary botonCarrito">Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="row shop-content" id="shopContent">
 
             </div>
-
         </div>
-
 
         <div class="container" id="carrito">
             <h2>Carrito</h2>
@@ -117,15 +36,14 @@
                     </tr>
                 </thead>
                 <tbody id="tbody">
-
+    
                 </tbody>
             </table>
-
+    
         </div>
+        </div>
+
     </div>
-
-
-
 
     <script src="./script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
