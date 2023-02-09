@@ -66,21 +66,14 @@ productos.forEach((product) => {
             tabla.append(fila);
    
         console.log(carritoProductos);
+
+        
        
     });
 });
 
-let btn_borrar = document.querySelectorAll(".borrar_elemento");
-
+function borrar_producto(id) {
     
-for( let boton of btn_borrar){
-
-    boton.addEventListener("click" , borrar_producto);
-}
-
-
-function borrar_producto(id){
-
     let findId = carritoProductos.find((product) =>product.id === id);
     console.log(findId);
 
@@ -90,3 +83,29 @@ function borrar_producto(id){
 
 }
 
+let btn_borrar = document.querySelectorAll(".borrar_elemento");
+
+    
+for( let boton of borrar_producto){
+
+    boton.addEventListener("click" , borrar_producto);
+}
+
+
+
+
+
+
+
+// function borrar_producto(id){
+
+//     let findId = carritoProductos.find((product) =>product.id === id);
+//     console.log(findId);
+
+//     borrarItem = carritoProductos.filter((carritoId) =>{
+//         return carritoId !== findId;
+//     });
+
+// }
+
+console.log(carritoProductos);
