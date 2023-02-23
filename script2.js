@@ -25,7 +25,7 @@ productos.push(new Producto("Tostadora", "1200", "img/toaster.jpg", "1", "5"));
 productos.push(new Producto("Cacerola", "800", "img/pot.jpg", "1", "6"));
 
 
-let carritoProductos = [];
+let carritoProductos = JSON.parse(localStorage.getItem("carritoProductos")) || [];
 
 function mostrar() {
 
@@ -67,11 +67,21 @@ function agregarAlCarrito(e) {
         id: productoEncontrado.id
     };
 
-    carritoProductos.push(productoAlCarrito);
+        carritoProductos.push(productoAlCarrito);
 
-    renderizarCarro();
+        renderizarCarro();
+        saveLocal();
+        Toastify({
+            text: "Producto agregado al carrito",
+            duration: 1500,
+            gravity: "bottom",
+            position: "right",
+            style:{
+                fontSize:"20px",
+                background: "linear-gradient(to right, #00b09b, #96c93d)"
+            }
+        }).showToast();
 
-    //setItem de LocalStorage
 
 }
 
@@ -85,17 +95,44 @@ function renderizarCarro(){
     
             fila.innerHTML = `<td><img width=50 src="${product.img}"></td>
                     <td>${product.nombre}</td>
-                    <td>${product.cantidad}</td>
-                    <td>${product.precio}</td>
+                    <td>${product.precio}$</td>
+                    <td class="centrar">
+                    <span class="restar">-</span>
+                    <p class="centrarTd">${product.cantidad}</p>
+                    <span class="sumar">+</span>
+                    </td>
+                    <td>Total: ${product.cantidad * product.precio} $</td>
                     <td><button id="${product.id}" class="btn btn-danger borrar_elemento">Borrar</button></td>`;
-        
-            tabla.append(fila);
+
+                tabla.append(fila);
+
+
+            let restar = fila.querySelector(".restar");
+
+
+            restar.addEventListener("click", () =>{
+                if(product.cantidad !==1) {
+                    product.cantidad--;
+                    saveLocal();
+                    renderizarCarro()
+                }
+
+            });
+
+            let sumar = fila.querySelector(".sumar");
+
+            sumar.addEventListener("click", () =>{
+                product.cantidad++;
+                saveLocal();
+                renderizarCarro()
+            });
         })
 
         console.log(carritoProductos);
 
         let btn_borrar = document.querySelectorAll(".borrar_elemento");
         btn_borrar.forEach(btn => btn.addEventListener("click", borrar_producto));
+
 };
 
 
@@ -110,9 +147,32 @@ function borrar_producto(e){
 
     console.log(carritoProductos)
 
-    renderizarCarro()
+    Toastify({
+        text: "Producto eliminado del carrito",
+        duration: 1500,
+        gravity: "bottom",
+        position: "right",
+        style:{
+            fontSize:"20px",
+            background: "linear-gradient(to right, red, yellow)"
+        }
+    }).showToast();
+
+    renderizarCarro();
+    saveLocal();
 }
 
+const saveLocal = () => {
+    localStorage.setItem("carritoProductos", JSON.stringify(carritoProductos));
+};
+
+JSON.parse(localStorage.getItem("carritoProductos"))
+
+let key = "7fd7ae1455876d5c767bdfbda953c898";
+
+fetch("https://cont1-virtual1.certisend.com/web/container/api/v1/fintech/ar/bcra/dolar_value")
+    .then(response=>response.json())
+    .then(data => console.log(data))
 
 
 

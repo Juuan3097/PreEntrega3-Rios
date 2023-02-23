@@ -18,14 +18,14 @@ td{
  }
 
  #carrito{
-    width: 30%; 
+    width: 50%; 
     background-color: black; 
     height: 100vh;
  }
   
 #listaProductos{
 
-  width: 70%;
+  width: 50%;
 }
 
 #contenedorPadre{
@@ -36,4 +36,23 @@ td{
 .bi-cart-fill{
   font-size:40px;
   padding-left:40px;
+}
+
+.restar{
+  cursor:pointer;
+}
+
+.sumar{
+  cursor:pointer;
+}
+
+.centrarTd{
+  display: inline-block;
+  margin-left: 1.8rem;
+  margin-right: 1.8rem;
+}
+
+.banner{
+  width: 100%;
+  height: 20px;
 }
