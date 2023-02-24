@@ -177,11 +177,13 @@ fetch("https://api.estadisticasbcra.com/usd",{
 })
     .then(response=>response.json())
     .then((data)=>{
+
+        let lastPosition = data.length-1
         
-        console.log(data[5705].v)
+        console.log(data[lastPosition].v)
         const bannerChild = document.createElement("div")
         bannerChild.innerHTML = `
-        <h4> Cotización del Dolar: $ ${data[5705].v}<h4>
+        <h4> Cotización del Dolar: $ ${data[lastPosition].v}<h4>
         `
         banner.append(bannerChild)
     
