@@ -176,7 +176,19 @@ fetch("https://api.estadisticasbcra.com/usd",{
     },
 })
     .then(response=>response.json())
-    .then(data=>console.log(data))
+    .then((data)=>{
+        
+        console.log(data[5705].v)
+        const bannerChild = document.createElement("div")
+        bannerChild.innerHTML = `
+        <h4> Cotización del Dolar: $ ${data[5705].v}<h4>
+        `
+        banner.append(bannerChild)
+    
+    })
+
+
+   
 
 
 
